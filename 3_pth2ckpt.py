@@ -21,7 +21,6 @@ def convert_pth_to_ckpt(pth_file_path, ckpt_fille_path, ckpt2pth_map):
     params_dict = []
 
     for k, v in mind_params_dict.items():
-        #if k == 'optimizer.class_embed.layers.0.weight': break
         if k == 'optimizer.pos_embed': 
             torch_key = 'backbone.pos_embed'
         elif k == 'optimizer.det_token':
@@ -43,10 +42,10 @@ def convert_pth_to_ckpt(pth_file_path, ckpt_fille_path, ckpt2pth_map):
 # file path
 ckpt_file_path = '../yolos-0_340.ckpt'
 pth_file_path = 'yolos_ti.pth'
-ckpt_to_pth_file = './ckpt2pth_map.json'
+ckpt2pth_map = './ckpt2pth_map.json'
 
 # mapping
-f = open(ckpt_to_pth_file)
+f = open(ckpt2pth_map)
 ckpt2pth_map = json.load(f)
 
 # convert
