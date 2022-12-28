@@ -29,6 +29,12 @@ Create mapping from mindspore parameters' name to pytorch's. Based on your mappi
 
 Check the json file to see if the mapping is correct, if else, edit the code or directly edit the json file to make the mapping correct.
 
+```text
+{"optimizer.backbone.cls_token": "backbone.cls_token", "optimizer.pos_embed": "pos_embed", "optimizer.det_token": "dist_token", "optimizer.backbone.patch_embed.proj.weight": "backbone.patch_embed.proj.weight", "optimizer.backbone.patch_embed.proj.bias": "backbone.patch_embed.proj.bias", "optimizer.backbone.blocks.0.norm1.gamma": "backbone.blocks.0.norm1.weight", "optimizer.backbone.blocks.0.norm1.beta": "backbone.blocks.0.norm1.bias", "optimizer.backbone.blocks.0.attn.qkv.weight": "backbone.blocks.0.attn.qkv.weight", "optimizer.backbone.blocks.0.attn.qkv.bias": "backbone.blocks.0.attn.qkv.bias", "optimizer.backbone.blocks.0.attn.proj.weight": "backbone.blocks.0.attn.proj.weight",
+
+...
+```
+
 * Step 3:
 
 3_pth2ckpt.py will get the parameter name in .ckpt file in order, and get the value from .pth file using the mapping created from step 2. Open `3_pth2ckpt.py`, change `ckpt_file_path`, `pth_file_path`, `ckpt2pth_map`.
