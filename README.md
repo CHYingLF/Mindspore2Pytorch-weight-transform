@@ -20,6 +20,9 @@ Edit the file path in `1_show.py`: `ckpt_file_path` and `pth_file_path`. Then ru
 ...
 ```
 
+![Alt text](./compare.PNG)
+
+
 * Step 2:
 
 Create mapping from mindspore parameters' name to pytorch's. Based on your mapping rule, edit `map_dict` and `dump` in `2_ckpt2pth_map.py`, change the `ckpt_file_path` to your `.ckpt` path. Run `2_ckpt2pth_map.py`, you will get a json file contain the parameters mapping. 
